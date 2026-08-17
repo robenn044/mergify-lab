@@ -1,21 +1,5 @@
 queue_rules:
-  - name: main-guarded
-    queue_conditions:
-      - base = main
-      - "#approved-reviews-by >= 1"
+  - name: default
+    queue_conditions: []
     merge_conditions:
-      - "#approved-reviews-by >= 1"
-
-  - name: side-open
-    queue_conditions:
-      - base != main
-    merge_conditions: []
-
-pull_request_rules:
-  - name: ba victim
-    conditions:
-      - title~=ba-victim
-    actions:
-      comment:
-        message: "hunt-zero-relationship-20260815"
-        bot_account: ironmossvictim
+      - -title~=(?i)payload
