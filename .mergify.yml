@@ -1,11 +1,7 @@
 merge_protections:
-  - name: main must not contain payload
+  - name: main requires review and green CI
     if:
       - base = main
     success_conditions:
-      - -title~=(?i)payload
-
-queue_rules:
-  - name: default
-    queue_conditions: []
-    merge_conditions: []
+      - "#approved-reviews-by >= 1"
+      - check-success = ci
