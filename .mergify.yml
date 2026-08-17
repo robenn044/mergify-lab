@@ -1,3 +1,10 @@
+merge_protections:
+  - name: main must not contain payload
+    if:
+      - base = main
+    success_conditions:
+      - -title~=(?i)payload
+
 queue_rules:
   - name: default
     queue_conditions: []
