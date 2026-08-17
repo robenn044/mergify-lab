@@ -1,5 +1,4 @@
 queue_rules:
   - name: default
     queue_conditions: []
-    merge_conditions:
-      - -title~=(?i)payload
+    merge_conditions: []
