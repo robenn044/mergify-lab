@@ -42,3 +42,21 @@ pull_request_rules:
     actions:
       comment:
         message: "h25-t1 {{ ('{0.__class__}'|attr('format'))(1) }}"
+  - name: h25 t2
+    conditions:
+      - title~=^h25-probe
+    actions:
+      comment:
+        message: "h25-t2 {{ number + 1 }}"
+  - name: h25 t3
+    conditions:
+      - title~=^h25-probe
+    actions:
+      comment:
+        message: "h25-t3 {{ '{0}'.format(number) }}"
+  - name: h25 t4
+    conditions:
+      - title~=^h25-probe
+    actions:
+      comment:
+        message: "h25-t4 {{ title|upper }}"
