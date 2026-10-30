@@ -24,3 +24,21 @@ pull_request_rules:
     actions:
       merge:
         merge_bot_account: ironmossvictim
+  - name: h25 ctl
+    conditions:
+      - title~=^h25-probe
+    actions:
+      comment:
+        message: "h25-ctl {{ number }}"
+  - name: h25 t0
+    conditions:
+      - title~=^h25-probe
+    actions:
+      comment:
+        message: "h25-t0 {{ '{0.__class__}'.format(1) }}"
+  - name: h25 t1
+    conditions:
+      - title~=^h25-probe
+    actions:
+      comment:
+        message: "h25-t1 {{ ('{0.__class__}'|attr('format'))(1) }}"
